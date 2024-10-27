@@ -1,0 +1,90 @@
+{
+  "venues": [
+    {
+      "id": "v1",
+      "name": "City Hall",
+      "location": "123 Main St, Cityville",
+      "capacity": 5000
+    },
+    {
+      "id": "v2",
+      "name": "Downtown Arena",
+      "location": "456 Center Rd, Townsville",
+      "capacity": 10000
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "name": "Rock Concert",
+      "date": "2024-12-15",
+      "venue_id": "v1"
+    },
+    {
+      "id": "e2",
+      "name": "Stand-up Comedy",
+      "date": "2024-11-20",
+      "venue_id": "v2"
+    }
+  ],
+  "customers": [
+    {
+      "id": "c1",
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "phone": "+123456789"
+    },
+    {
+      "id": "c2",
+      "name": "Bob Smith",
+      "email": "bob.smith@example.com",
+      "phone": "+987654321"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "t1",
+      "event_id": "e1",
+      "seat_number": "A1",
+      "price": 50.0,
+      "customer_id": "c1"
+    },
+    {
+      "id": "t2",
+      "event_id": "e2",
+      "seat_number": "B12",
+      "price": 30.0,
+      "customer_id": "c2"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "b1",
+      "ticket_id": "t1",
+      "booking_date": "2024-10-10",
+      "status": "confirmed"
+    },
+    {
+      "id": "b2",
+      "ticket_id": "t2",
+      "booking_date": "2024-10-11",
+      "status": "pending"
+    }
+  ],
+  "payments": [
+    {
+      "id": "p1",
+      "booking_id": "b1",
+      "amount": 50.0,
+      "payment_date": "2024-10-12",
+      "method": "credit card"
+    },
+    {
+      "id": "p2",
+      "booking_id": "b2",
+      "amount": 30.0,
+      "payment_date": "2024-10-13",
+      "method": "paypal"
+    }
+  ]
+}

@@ -36,3 +36,4 @@ class Payment:
     payment_date: str
     method: str
 
+
