@@ -11,6 +11,12 @@
       "name": "Downtown Arena",
       "location": "456 Center Rd, Townsville",
       "capacity": 10000
+    },
+    {
+      "venue_id": "V001",
+      "name": "Concert Hall",
+      "location": "New York",
+      "capacity": 5000
     }
   ],
   "events": [
@@ -25,6 +31,12 @@
       "name": "Stand-up Comedy",
       "date": "2024-11-20",
       "venue_id": "v2"
+    },
+    {
+      "event_id": "E001",
+      "name": "Rock Concert",
+      "date": "2024-11-20",
+      "venue_id": "V001"
     }
   ],
   "customers": [
@@ -39,6 +51,12 @@
       "name": "Bob Smith",
       "email": "bob.smith@example.com",
       "phone": "+987654321"
+    },
+    {
+      "customer_id": "C001",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "123-456-7890"
     }
   ],
   "tickets": [
@@ -55,6 +73,13 @@
       "seat_number": "B12",
       "price": 30.0,
       "customer_id": "c2"
+    },
+    {
+      "ticket_id": "T001",
+      "event_id": "E001",
+      "seat_number": "A1",
+      "price": 100.0,
+      "customer_id": "C001"
     }
   ],
   "bookings": [
@@ -69,6 +94,12 @@
       "ticket_id": "t2",
       "booking_date": "2024-10-11",
       "status": "pending"
+    },
+    {
+      "booking_id": "B001",
+      "ticket_id": "T001",
+      "booking_date": "2024-10-25",
+      "status": "Confirmed"
     }
   ],
   "payments": [
@@ -85,6 +116,13 @@
       "amount": 30.0,
       "payment_date": "2024-10-13",
       "method": "paypal"
+    },
+    {
+      "payment_id": "P001",
+      "booking_id": "B001",
+      "amount": 100.0,
+      "payment_date": "2024-10-25",
+      "method": "Credit Card"
     }
   ]
 }

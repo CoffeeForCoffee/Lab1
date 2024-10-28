@@ -45,6 +45,15 @@ class Payment:
         self.payment_date = payment_date
         self.method = method
 
+# Выгрузка инфы из старого файла
+filename = 'event.json'
+
+def load_data(filename):
+    with open('event.json', 'r', encoding='utf8') as f:
+        return json.load(f)
+
+old_data = load_data(filename)
+
 # Создание объектов
 venue = Venue("V001", "Concert Hall", "New York", 5000)
 event = Event("E001", "Rock Concert", "2024-11-20", "V001")
@@ -54,19 +63,29 @@ booking = Booking("B001", "T001", "2024-10-25", "Confirmed")
 payment = Payment("P001", "B001", 100.0, "2024-10-25", "Credit Card")
 
 # Сериализация объектов в словарь
-data = {
-    "venue": vars(venue),
-    "event": vars(event),
-    "customer": vars(customer),
-    "ticket": vars(ticket),
-    "booking": vars(booking),
-    "payment": vars(payment)
+new_data = {
+    "venues": vars(venue),
+    "events": vars(event),
+    "customers": vars(customer),
+    "tickets": vars(ticket),
+    "bookings": vars(booking),
+    "payments": vars(payment)
 }
 
-# Запись и чтение данных в/из JSON
-#with open('event.json', 'w', encoding='utf8') as f:
-#    json.dump(data, f, ensure_ascii=False, indent=4)
+# Объединение информации
+def add_data(old_data, new_data):
+    for key in old_data.keys():
+        if key in new_data:
+            old_data[key].append(new_data[key])
 
-with open('event.json', 'r', encoding='utf8') as f:
+add_data(old_data, new_data)
+
+# Запись и чтение данных в/из JSON
+new_filename = 'Event2.json'
+
+with open(new_filename, 'w', encoding='utf8') as f:
+    json.dump(old_data, f, ensure_ascii=False, indent=2)
+
+with open(new_filename, 'r', encoding='utf8') as f:
     text = json.load(f)
     pprint(text)
