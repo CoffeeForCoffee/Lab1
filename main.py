@@ -45,6 +45,28 @@ class Payment:
         self.payment_date = payment_date
         self.method = method
 
+# Создание объектов
+venue = Venue("V001", "Concert Hall", "New York", 5000)
+event = Event("E001", "Rock Concert", "2024-11-20", "V001")
+customer = Customer("C001", "John Doe", "john.doe@example.com", "123-456-7890")
+ticket = Ticket("T001", "E001", "A1", 100.0, "C001")
+booking = Booking("B001", "T001", "2024-10-25", "Confirmed")
+payment = Payment("P001", "B001", 100.0, "2024-10-25", "Credit Card")
+
+# Сериализация объектов в словарь
+data = {
+    "venue": vars(venue),
+    "event": vars(event),
+    "customer": vars(customer),
+    "ticket": vars(ticket),
+    "booking": vars(booking),
+    "payment": vars(payment)
+}
+
+# Запись и чтение данных в/из JSON
+#with open('event.json', 'w', encoding='utf8') as f:
+#    json.dump(data, f, ensure_ascii=False, indent=4)
+
 with open('event.json', 'r', encoding='utf8') as f:
     text = json.load(f)
     pprint(text)
