@@ -112,4 +112,4 @@ except FileNotFoundError:
 except IOError:
     print("Ошибка чтения файла.")
 except JSONDecodeError:
-    print("Ошибка JSON.")
+    print("Ошибка декодирования JSON.")
