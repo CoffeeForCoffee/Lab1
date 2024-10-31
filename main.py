@@ -8,9 +8,6 @@ class InvalidCapacityError(Exception):
 class InvalidPriceError(Exception):
     pass
 
-class InvalidAmountError(ValueError):
-    pass
-
 class Venue:
     def __init__(self, venue_id: str, name: str, location: str, capacity: int):
         if capacity <= 0:
@@ -54,7 +51,7 @@ class Booking:
 class Payment:
     def __init__(self, payment_id: str, booking_id: str, amount: float, payment_date: str, method: str):
         if amount < 0:
-            raise InvalidAmountError("Amount должна быть положительным числом.")
+            raise ValueError("Amount должна быть положительным числом.")
         self.payment_id = payment_id
         self.booking_id = booking_id
         self.amount = amount
