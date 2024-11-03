@@ -77,7 +77,7 @@ def load_data(filename):
 
 old_data = load_data(filename)
 
-# Создание объектов
+# Создание объектов (Create)
 venue = Venue("V001", "Concert Hall", "New York", 6000)
 event = Event("E001", "Rock Concert", "2024-11-20", "V001")
 customer = Customer("C001", "John Doe", "john.doe@example.com", "123-456-7890")
@@ -95,7 +95,7 @@ new_data = {
     "payments": vars(payment)
 }
 
-# Объединение информации
+# Объединение информации (Update)
 def add_data(old_data, new_data):
     for key in old_data.keys():
         if key in new_data:
@@ -103,7 +103,7 @@ def add_data(old_data, new_data):
 
 add_data(old_data, new_data)
 
-# Запись и чтение данных в/из JSON
+# Запись данных в новый JSON
 new_filename = 'Event2.json'
 
 try:
@@ -112,6 +112,28 @@ try:
 except IOError:
     print("Ошибка записи в файл.")
 
+# Удаление (Delete)
+customer_del = "c1"
+try:
+    with open(new_filename, 'r', encoding='utf8') as f:
+        data = json.load(f)
+        minimal = 0
+        for txt in data['customers'] and data['tickets']:
+            if txt['customer_id'] == customer_del:
+                data['customers'].pop(minimal)
+                data['tickets'].pop(minimal)
+            minimal = minimal + 1
+        with open(new_filename, 'w', encoding='utf8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+    print("Покупатель и билет удалены")
+except FileNotFoundError:
+    print("Файл для чтения не найден.")
+except IOError:
+    print("Ошибка чтения файла.")
+except JSONDecodeError:
+    print("Ошибка декодирования JSON.")
+
+#Чтение данных (Read)
 try:
     with open(new_filename, 'r', encoding='utf8') as f:
         text = json.load(f)

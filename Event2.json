@@ -41,12 +41,6 @@
   ],
   "customers": [
     {
-      "customer_id": "c1",
-      "name": "Alice Johnson",
-      "email": "alice.johnson@example.com",
-      "phone": "+123456789"
-    },
-    {
       "customer_id": "c2",
       "name": "Bob Smith",
       "email": "bob.smith@example.com",
@@ -60,13 +54,6 @@
     }
   ],
   "tickets": [
-    {
-      "ticket_id": "t1",
-      "event_id": "e1",
-      "seat_number": "A1",
-      "price": 50.0,
-      "customer_id": "c1"
-    },
     {
       "ticket_id": "t2",
       "event_id": "e2",
