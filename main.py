@@ -83,7 +83,7 @@ event = Event("E001", "Rock Concert", "2024-11-20", "V001")
 customer = Customer("C001", "John Doe", "john.doe@example.com", "123-456-7890")
 ticket = Ticket("T001", "E001", "A1", 100.0, "C001")
 booking = Booking("B001", "T001", "2024-10-25", "Confirmed")
-payment = Payment("P001", "B001", -100.0, "2024-10-25", "Credit Card")
+payment = Payment("P001", "B001", 100.0, "2024-10-25", "Credit Card")
 
 # Сериализация объектов в словарь
 new_data = {
